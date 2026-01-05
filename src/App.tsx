@@ -6,10 +6,12 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import FloatingBookButton from "@/components/FloatingBookButton";
+
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -17,6 +19,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Booking from "./pages/Booking";
 import Auth from "./pages/Auth";
+
 import Dashboard from "./pages/admin/Dashboard";
 import DashboardHome from "./pages/admin/DashboardHome";
 import AdminBookings from "./pages/admin/AdminBookings";
@@ -24,14 +27,15 @@ import AdminServices from "./pages/admin/AdminServices";
 import AdminGallery from "./pages/admin/AdminGallery";
 import AdminPartners from "./pages/admin/AdminPartners";
 import AdminUsers from "./pages/admin/AdminUsers";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const AppLayout = () => {
   const location = useLocation();
-  const isAdminRoute = location.pathname.startsWith('/admin');
-  const isAuthRoute = location.pathname === '/auth';
+  const isAdminRoute = location.pathname.startsWith("/admin");
+  const isAuthRoute = location.pathname === "/auth";
 
   if (isAdminRoute) {
     return (
